@@ -29,3 +29,14 @@ declare module 'vite' {
     forgeConfigSelf: VitePluginConfig[K][number];
   }
 }
+
+// electron-env.d.ts
+export interface IElectronAPI {
+  getFilePath: () => Promise<void>;
+}
+
+declare global {
+  interface Window {
+    electronAPI: IElectronAPI;
+  }
+}
